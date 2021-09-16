@@ -5,8 +5,8 @@ RUN wget https://github.com/fatedier/frp/releases/download/v0.37.0/frp_0.37.0_li
 RUN tar -xzvf frp_0.37.0_linux_amd64.tar.gz
 
 RUN cp frp_0.37.0_linux_amd64/frpc /usr/bin/
-
-RUN chmod +x /usr/bin/frpc && \
-        mkdir /etc/frp
+RUN cp frp_0.37.0_linux_amd64/frps /usr/bin
+RUN chmod +x /usr/bin/frps
+RUN chmod +x /usr/bin/frpc
 
 CMD ["/usr/bin/frpc", "-c", "/etc/frp/frpc.ini"]
